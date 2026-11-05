@@ -1,0 +1,61 @@
+---
+import { site } from "../../data/site";
+import "../../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title = `${site.name} | ${site.motto}`, description = site.description } = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, site.url);
+const ogImage = `${site.url}/og/og-default.png`;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Primary Meta -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content={site.name} />
+
+    <!-- Canonical & Robots -->
+    <link rel="canonical" href={canonicalURL} />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph (social & link previews) -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:url" content={canonicalURL.toString()} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={site.name} />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter Card (explicit for consistent previews) -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <!-- Icons (transition point - all under /icons/) -->
+    <link rel="icon" href="/icons/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/icons/favicon.png" type="image/png" sizes="any" />
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#6366f1" />
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#ffffff" />
+  </head>
+  <body
+    class="min-h-screen bg-white text-neutral-900 antialiased selection:bg-accent selection:text-white"
+  >
+    <slot />
+  </body>
+</html>

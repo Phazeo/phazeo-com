@@ -1,0 +1,17 @@
+---
+import { featuredProjects, featuredTeaser } from "../../data/content";
+import { products } from "../../data/products";
+import { site } from "../../data/site";
+import FeaturedProjectsBlock from "./FeaturedProjectsBlock";
+
+const featured = products.filter((p) => p.name === "Duefy" || p.name === "Pixsort");
+---
+
+<FeaturedProjectsBlock
+  client:visible
+  title={featuredProjects.title}
+  subline={featuredProjects.subline}
+  projects={featured}
+  teaser={featuredTeaser}
+  portfolioUrl={site.links.portfolio}
+/>

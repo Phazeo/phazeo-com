@@ -1,0 +1,28 @@
+version: 2
+
+updates:
+  # npm, pnpm and yarn all use the "npm" ecosystem.
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+    cooldown:
+      default-days: 7 # also covers dependencies pnpm's minimumReleaseAge does not reach (Actions)
+    groups:
+      npm-minor-and-patch:
+        applies-to: version-updates
+        patterns: ["*"]
+        update-types: ["minor", "patch"]
+    open-pull-requests-limit: 3
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    cooldown:
+      default-days: 7
+    groups:
+      github-actions-all:
+        applies-to: version-updates
+        patterns: ["*"]
+    open-pull-requests-limit: 3
