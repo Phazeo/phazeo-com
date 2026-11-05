@@ -1,5 +1,6 @@
 export const ProductStatus = {
   LIVE: "live",
+  RELEASED: "released",
   IN_DEVELOPMENT: "in-development",
 } as const;
 
@@ -31,7 +32,7 @@ export const products: Product[] = [
     description: "A local-first photo and video organizer and backup tool. Your files stay yours.",
     href: "https://github.com/Phazeo/truestill",
     linkLabel: "View on GitHub",
-    status: "live",
+    status: "released",
     gradient: "from-emerald-500/20 to-teal-600/10",
   },
   {
