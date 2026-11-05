@@ -57,11 +57,7 @@ export default function FeaturedProjectsBlock({
         <p className="mt-2 text-[var(--text-muted)]">{subline}</p>
         <div className="mt-12 grid gap-8 md:gap-10 lg:gap-12 sm:grid-cols-2 lg:grid-cols-3">
           {projects.map((project) => (
-            <HoverBorderGradient
-              key={project.name}
-              className="flex min-h-[280px] flex-col overflow-hidden p-0"
-            >
-              <div className={cn("h-28 shrink-0 bg-gradient-to-br", project.gradient)} />
+            <HoverBorderGradient key={project.name} className="flex flex-col overflow-hidden p-0">
               <div className="flex min-h-[200px] flex-1 flex-col p-6">
                 <div className="flex flex-wrap items-center justify-between gap-2">
                   <h3 className="text-xl font-semibold text-[var(--text-primary)]">

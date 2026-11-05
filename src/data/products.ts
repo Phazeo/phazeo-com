@@ -14,8 +14,6 @@ export interface Product {
   /** Link text for `href`. */
   linkLabel?: string;
   status: ProductStatusType;
-  /** Tailwind gradient classes for the card header (e.g. from-amber-500/20 to-orange-600/10) */
-  gradient: string;
 }
 
 export const products: Product[] = [
@@ -25,7 +23,6 @@ export const products: Product[] = [
     href: "https://scrift.app",
     linkLabel: "Visit site",
     status: "live",
-    gradient: "from-blue-500/20 to-cyan-600/10",
   },
   {
     name: "Truestill",
@@ -33,13 +30,11 @@ export const products: Product[] = [
     href: "https://github.com/Phazeo/truestill",
     linkLabel: "View on GitHub",
     status: "released",
-    gradient: "from-emerald-500/20 to-teal-600/10",
   },
   {
     name: "Nexdue",
     description: "Track subscriptions, warranties and recurring payments, with email reminders.",
     href: null,
     status: "in-development",
-    gradient: "from-amber-500/20 to-orange-600/10",
   },
 ];
