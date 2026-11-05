@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="tp-dark" width="140" height="70" viewBox="0 0 140 70" role="img" aria-label="Transition Point primary dark" xmlns="http://www.w3.org/2000/svg">
+              <defs><linearGradient id="tp-g1" x1="0%" y1="50%" x2="100%" y2="50%"><stop offset="0%" stop-color="#6366f1"/><stop offset="100%" stop-color="#22d3ee"/></linearGradient></defs>
+              <path d="M12 52 L52 52 L70 14 L88 52 L128 52" fill="none" stroke="url(#tp-g1)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="70" cy="14" r="5" fill="#22d3ee" opacity="0.25"/><circle cx="70" cy="14" r="2.5" fill="#22d3ee" opacity="0.7"/>
+            </svg>

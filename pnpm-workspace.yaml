@@ -1,0 +1,13 @@
+packages:
+  - "."
+
+# Dependency cooldown (minutes): a new version must be 7 days old before install.
+minimumReleaseAge: 10080
+
+# Install scripts are blocked unless a package is listed here, each with a reason.
+strictDepBuilds: true
+allowBuilds:
+  # husky: its prepare script installs the git hooks
+  husky: true
+  # esbuild: native binary postinstall used by Vite
+  esbuild: true

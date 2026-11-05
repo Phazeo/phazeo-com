@@ -1,0 +1,5 @@
+# Code owners: PRs to main need approval from one of these.
+* @dinesh-ad
+/.github/ @dinesh-ad
+/.husky/ @dinesh-ad
+/tools/ @dinesh-ad

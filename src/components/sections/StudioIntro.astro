@@ -1,0 +1,16 @@
+---
+import { studioIntro } from "../../data/content";
+import StudioIntroBlock from "./StudioIntroBlock";
+---
+
+<section
+  id="about"
+  class="border-t border-[var(--border-subtle)] bg-[var(--surface-1)]"
+>
+  <StudioIntroBlock
+    client:visible
+    title={studioIntro.title}
+    subline={studioIntro.subline}
+    attributes={studioIntro.attributes}
+  />
+</section>

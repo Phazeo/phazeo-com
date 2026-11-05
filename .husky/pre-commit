@@ -1,0 +1,3 @@
+sh tools/guard/check-leaks.sh --staged
+pnpm lint-staged
+pnpm quality

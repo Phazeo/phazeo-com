@@ -1,0 +1,11 @@
+---
+import { philosophy } from "../../data/content";
+import PhilosophyBlock from "./PhilosophyBlock";
+---
+
+<PhilosophyBlock
+  client:visible
+  title={philosophy.title}
+  quote={philosophy.quote}
+  values={philosophy.beliefs}
+/>
