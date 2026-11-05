@@ -23,9 +23,9 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "@astrojs/react": "7.1.1",
+    "@astrojs/react": "7.1.2",
     "@fontsource/outfit": "5.3.0",
-    "astro": "7.4.2",
+    "astro": "7.4.4",
     "clsx": "2.1.1",
     "lucide-react": "0.563.0",
     "motion": "12.29.2",
