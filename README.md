@@ -40,7 +40,7 @@ node --test scripts/check-contributors.test.mjs
 | -------------------- | -------------------------------------------------------------------- |
 | `src/pages/`         | The single page (`index.astro`)                                      |
 | `src/components/`    | Layout, page sections and UI effects (Astro and React islands)       |
-| `src/data/`          | Site metadata, copy, products and domains                            |
+| `src/data/`          | Site metadata, copy and products                                     |
 | `src/styles/`        | Tailwind and global styles                                           |
 | `public/`            | Icons, logos, Open Graph image, `robots.txt`, `_headers`             |
 | `logos/`             | Source logo files                                                    |

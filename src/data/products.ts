@@ -1,6 +1,6 @@
 export const ProductStatus = {
   LIVE: "live",
-  COMING_SOON: "coming-soon",
+  IN_DEVELOPMENT: "in-development",
 } as const;
 
 export type ProductStatusType = (typeof ProductStatus)[keyof typeof ProductStatus];
@@ -8,35 +8,37 @@ export type ProductStatusType = (typeof ProductStatus)[keyof typeof ProductStatu
 export interface Product {
   name: string;
   description: string;
-  /** Optional one-liner for featured card */
-  tagline?: string;
+  /** The product's own site or its public repository; null when there is nothing to link to. */
   href: string | null;
+  /** Link text for `href`. */
+  linkLabel?: string;
   status: ProductStatusType;
-  /** Tailwind gradient classes for card placeholder (e.g. from-amber-500/20 to-orange-600/10) */
-  gradient?: string;
+  /** Tailwind gradient classes for the card header (e.g. from-amber-500/20 to-orange-600/10) */
+  gradient: string;
 }
 
 export const products: Product[] = [
   {
-    name: "Portfolio",
-    description: "Personal work and projects showcase",
-    href: "https://portfolio.phazeo.com",
+    name: "Scrift",
+    description: "Brand logos and verified colors for thousands of services, through one API.",
+    href: "https://scrift.app",
+    linkLabel: "Visit site",
     status: "live",
-  },
-  {
-    name: "Duefy",
-    tagline: "Know what you owe, before it's due.",
-    description: "A lightweight companion for tracking subscriptions and recurring expenses.",
-    href: null,
-    status: "coming-soon",
-    gradient: "from-amber-500/20 to-orange-600/10",
-  },
-  {
-    name: "Pixsort",
-    tagline: "Your images, intelligently organized.",
-    description: "An intelligent way to organize, search, and manage image libraries.",
-    href: null,
-    status: "coming-soon",
     gradient: "from-blue-500/20 to-cyan-600/10",
+  },
+  {
+    name: "Truestill",
+    description: "A local-first photo and video organizer and backup tool. Your files stay yours.",
+    href: "https://github.com/Phazeo/truestill",
+    linkLabel: "View on GitHub",
+    status: "live",
+    gradient: "from-emerald-500/20 to-teal-600/10",
+  },
+  {
+    name: "Nexdue",
+    description: "Track subscriptions, warranties and recurring payments, with email reminders.",
+    href: null,
+    status: "in-development",
+    gradient: "from-amber-500/20 to-orange-600/10",
   },
 ];

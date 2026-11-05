@@ -1,22 +1,13 @@
 "use client";
 
-import { EncryptedText } from "@/components/ui/encrypted-text";
 import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
 import type { Product, ProductStatusType } from "@/data/products";
 import { cn } from "@/lib/utils";
-
-interface FeaturedTeaser {
-  name: string;
-  tagline: string;
-  gradient: string;
-}
 
 interface FeaturedProjectsBlockProps {
   title: string;
   subline: string;
   projects: readonly Product[];
-  teaser: FeaturedTeaser;
-  portfolioUrl: string;
   className?: string;
 }
 
@@ -32,7 +23,7 @@ function StatusBadge({ status }: { status: ProductStatusType }) {
   return (
     <span className="inline-flex items-center gap-1.5 rounded-full bg-amber-500/10 px-2.5 py-0.5 text-xs font-medium text-amber-400">
       <span className="h-1.5 w-1.5 rounded-full bg-amber-400" aria-hidden />
-      Shipping soon
+      In development
     </span>
   );
 }
@@ -41,8 +32,6 @@ export default function FeaturedProjectsBlock({
   title,
   subline,
   projects,
-  teaser,
-  portfolioUrl,
   className,
 }: FeaturedProjectsBlockProps) {
   return (
@@ -64,12 +53,7 @@ export default function FeaturedProjectsBlock({
               key={project.name}
               className="flex min-h-[280px] flex-col overflow-hidden p-0"
             >
-              <div
-                className={cn(
-                  "h-28 shrink-0 bg-gradient-to-br",
-                  project.gradient ?? "from-zinc-500/10 to-zinc-600/5"
-                )}
-              />
+              <div className={cn("h-28 shrink-0 bg-gradient-to-br", project.gradient)} />
               <div className="flex min-h-[200px] flex-1 flex-col p-6">
                 <div className="flex flex-wrap items-center justify-between gap-2">
                   <h3 className="text-xl font-semibold text-[var(--text-primary)]">
@@ -77,34 +61,24 @@ export default function FeaturedProjectsBlock({
                   </h3>
                   <StatusBadge status={project.status} />
                 </div>
-                {project.tagline && (
-                  <p className="mt-1 text-sm text-[var(--text-muted)]">{project.tagline}</p>
-                )}
                 <p className="mt-3 text-sm leading-relaxed text-[var(--text-muted)]">
                   {project.description}
                 </p>
-                <a
-                  href={project.href ?? portfolioUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-auto inline-flex items-center gap-1.5 pt-4 text-sm font-medium text-[var(--color-accent)] transition-colors hover:underline"
-                >
-                  Learn more<span className="sr-only"> about {project.name}</span>
-                  <span aria-hidden>→</span>
-                </a>
+                {project.href && (
+                  <a
+                    href={project.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-auto inline-flex items-center gap-1.5 pt-4 text-sm font-medium text-[var(--color-accent)] transition-colors hover:underline"
+                  >
+                    {project.linkLabel ?? "Learn more"}
+                    <span className="sr-only"> about {project.name}</span>
+                    <span aria-hidden>→</span>
+                  </a>
+                )}
               </div>
             </HoverBorderGradient>
           ))}
-          {/* Teaser card - same size as product cards */}
-          <HoverBorderGradient className="flex min-h-[280px] flex-col overflow-hidden p-0 opacity-90">
-            <div className={cn("h-28 shrink-0 bg-gradient-to-br", teaser.gradient)} />
-            <div className="flex min-h-[200px] flex-1 flex-col justify-center p-6">
-              <h3 className="text-xl font-semibold text-[var(--text-primary)]">
-                <EncryptedText text={teaser.name} decryptedText="Coming soon" />
-              </h3>
-              <p className="mt-1 text-sm text-[var(--text-muted)]">{teaser.tagline}</p>
-            </div>
-          </HoverBorderGradient>
         </div>
       </div>
     </section>

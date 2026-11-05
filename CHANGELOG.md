@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Projects section shows Scrift, Truestill and Nexdue; the domains section and its navigation links are removed, with the components and the unused dependencies (`class-variance-authority`, `framer-motion`) that only served them
 - Prepared for a public repository: leak guard (gitleaks, pre-commit and CI), hashed Content-Security-Policy and security headers, self-hosted wordmark font (`@fontsource/outfit`), no contact email or contact links on the page
 - pnpm 11.28.9 (pnpm 12 writes a two-document lockfile that GitHub's dependency graph cannot read) with a 7-day release cooldown, exact dependency versions, `UNLICENSED`; the dependency overrides were removed (none is needed for a security advisory)
 - Biome 1.9.4 to 2.6.4, configuration migrated
