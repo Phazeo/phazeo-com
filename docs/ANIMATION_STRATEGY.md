@@ -11,8 +11,7 @@ Which elements animate, why, triggers, reduced-motion behavior, and mobile rules
 | **Hero** | Spotlight (existing); entrance fade-ins for logo, title, motto, description, CTAs | Single “brand moment”; focus on headline; no continuous motion. |
 | **Section headings (Projects, About)** | Scroll reveal (fade + short translate up) when section enters viewport | “Chapter” feel; one reveal per section; clear hierarchy. |
 | **Project cards** | Hover only: border glow, soft elevation, optional slight scale | Feedback on interaction; no motion when idle. |
-| **Scroll cue / Jump to Domains** | None (or minimal hover on the link) | Clarity and affordance; not decorative. |
-| **Domains section** | None new; existing beams unchanged | Domains not redesigned; no added motion. |
+| **Scroll cue** | None (or minimal hover on the link) | Clarity and affordance; not decorative. |
 | **Footer** | Hover on links only | Lightweight; no scroll or load animation. |
 
 No animated tabs, no per-card scroll animation, no continuous motion on lists or grids.
@@ -26,7 +25,7 @@ No animated tabs, no per-card scroll animation, no continuous motion on lists or
 | **On load** | Hero spotlight + hero copy fade-in | Runs once; then static. |
 | **On scroll** | Section heading reveals (Projects, About) | When section enters viewport (e.g. IntersectionObserver); single run. |
 | **Hover / focus** | Project cards, footer links, CTAs | CSS transitions; no JS required for most. |
-| **None** | Domains cards (beyond existing), body copy blocks | Content first; avoid distraction. |
+| **None** | body copy blocks | Content first; avoid distraction. |
 
 ---
 
@@ -44,7 +43,7 @@ No animation is required to understand content or complete tasks.
 ## 4. Mobile rules
 
 - **Less motion:** Prefer fewer or no scroll-triggered animations on small viewports if needed (e.g. reduce or skip reveal for section headings on narrow screens). Current approach: one lightweight reveal; if performance or battery is a concern, can be disabled below a breakpoint.
-- **Touch:** No hover-only critical information; scroll cue and “Jump to Domains” are tappable links. Touch targets adequate (e.g. ≥ 44px where possible).
+- **Touch:** No hover-only critical information; the scroll cue is a tappable link. Touch targets adequate (e.g. ≥ 44px where possible).
 - **Performance:** No heavy continuous animations; no full-page hydration. Islands load with `client:visible` where possible.
 
 ---
@@ -52,7 +51,6 @@ No animation is required to understand content or complete tasks.
 ## 5. Aceternity UI usage (summary)
 
 - **Spotlight:** Hero only (one treatment).
-- **Background Beams:** Domains only (unchanged).
 - **Scroll reveal:** Custom lightweight implementation (or Framer Motion) for section headings; not an Aceternity component.
 - **Moving Border / card hover:** Optional, very subtle, CSS-first on project cards only; no continuous animation.
 

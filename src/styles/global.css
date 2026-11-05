@@ -113,8 +113,7 @@
 
 /* Smooth-scroll anchor offset so section headings are visible */
 #projects,
-#about,
-#domains {
+#about {
   scroll-margin-top: 1.5rem;
 }
 

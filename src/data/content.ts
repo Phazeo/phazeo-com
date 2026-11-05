@@ -73,7 +73,7 @@ export const philosophy = {
 
 export const finalCta = {
   title: "Interested in the work?",
-  body: "Whether you're exploring a collaboration, a domain, or just curious about what's coming next - feel free to reach out.",
+  body: "See the portfolio, and follow along as the next products take shape.",
   primaryLabel: "View Portfolio",
 } as const;
 
@@ -81,11 +81,4 @@ export const finalCta = {
 export const featuredProjects = {
   title: "What we're shipping",
   subline: "Products built in-house. No clients. No deadlines. Just craft.",
-} as const;
-
-/** Teaser card for "more coming" in featured grid */
-export const featuredTeaser = {
-  name: "More in the lab",
-  tagline: "Shipping when ready.",
-  gradient: "from-zinc-500/10 to-zinc-600/5",
 } as const;
