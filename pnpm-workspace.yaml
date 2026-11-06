@@ -11,3 +11,5 @@ allowBuilds:
   husky: true
   # esbuild: native binary postinstall used by Vite
   esbuild: true
+  # workerd: wrangler's local dev runtime; its postinstall is not needed to deploy
+  workerd: false
