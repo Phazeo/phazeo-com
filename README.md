@@ -7,6 +7,7 @@
 Landing site of a personal product studio: focused projects, experiments and ideas. Live at [phazeo.com](https://phazeo.com).
 
 [![CI](https://github.com/Phazeo/phazeo-com/actions/workflows/ci.yml/badge.svg)](https://github.com/Phazeo/phazeo-com/actions/workflows/ci.yml)
+[![Deploy](https://github.com/Phazeo/phazeo-com/actions/workflows/deploy.yml/badge.svg)](https://github.com/Phazeo/phazeo-com/actions/workflows/deploy.yml)
 [![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/Phazeo/phazeo-com/badge)](https://scorecard.dev/viewer/?uri=github.com/Phazeo/phazeo-com)
 
 ## How a change ships
@@ -19,7 +20,7 @@ flowchart LR
   DP --> LIVE[phazeo.com]
 ```
 
-The deploy workflow is added with the move to the new repository; until then merging to `main` does not publish by itself.
+Merging to `main` runs the same checks again and then publishes the built site.
 
 ## Quick start
 

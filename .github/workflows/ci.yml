@@ -27,6 +27,7 @@ jobs:
           node-version-file: ".node-version"
           cache: pnpm
       - run: pnpm install --frozen-lockfile
+      - run: node scripts/check-headers.mjs
       - run: node --test scripts/check-contributors.test.mjs
       - run: pnpm exec biome ci .
       - run: pnpm typecheck
